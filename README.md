@@ -1,5 +1,5 @@
 # Проектная работа Mesto
-<img src="/images/preview.png">
+<img src="/src/images/preview.png">
 
 
 [Ссылка на проект](https://github.com/TraurigerMann/mesto-project-ff.git)
