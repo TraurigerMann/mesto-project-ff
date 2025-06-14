@@ -1,3 +1,6 @@
+import samaraImage from '../images/samara_card.jpg';
+import khimkiImage from '../images/khimki_card.jpg';
+
 export const initialCards = [
     {
       name: "Архыз",
@@ -25,10 +28,10 @@ export const initialCards = [
     },
     {
       name: "Самара",
-      link: "./images/samara_card.jpg",
+      link: samaraImage,
     },
     {
       name: "Химки",
-      link: "./images/khimki_card.jpg",
+      link: khimkiImage,
     }
 ];
