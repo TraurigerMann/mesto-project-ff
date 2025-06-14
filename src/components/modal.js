@@ -10,7 +10,7 @@ function handleEscClick(evt) {
   }
 }
 
-// Обработчик закрытия поп-апа по нажатию esc
+// Обработчик закрытия поп-апа по нажатию на оверлей
 function handleOverlayClick(evt) { 
   if (evt.target === evt.currentTarget) {
     closePopup(evt.target);
