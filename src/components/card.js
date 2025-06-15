@@ -1,9 +1,3 @@
-import {
-  popupImage,
-  popupImageCaption,
-  buttonTypeCard,
-} from "../components/constants.js";
-
 
 const cardTemplate = document.querySelector('#card-template').content;
 const cardsList = document.querySelector('.places__list');
@@ -12,7 +6,6 @@ const cardsList = document.querySelector('.places__list');
 function renderCard(cardInfo, callbacksObject) {
   const {
     deleteCardCallback,
-    openImageCallback,
     handleLikesCallback
   } = callbacksObject;
   
@@ -27,10 +20,6 @@ function renderCard(cardInfo, callbacksObject) {
   cardImage.alt = cardInfo.name;
   cardTitle.textContent = cardInfo.name;
 
-  cardImage.addEventListener("click", () => {
-    openImageCallback(cardImage, popupImage, popupImageCaption, buttonTypeCard);
-  });
-
   deleteCardButton.addEventListener('click', () => {
     deleteCardCallback(cardElement);
   });
@@ -42,24 +31,13 @@ function renderCard(cardInfo, callbacksObject) {
   return cardElement;
 }
 
-// Создание карточек из массива initialCards
-function createCard(card, callbacksObject) {
-  const newCard = renderCard(card, callbacksObject);
-  cardsList.append(newCard);
-}
-
-// Создание карточек новых карточек
-function createNewCard(card, callbacksObject) {
-  const newCard = renderCard(card, callbacksObject);
-  cardsList.insertBefore(newCard, cardsList.firstChild); 
-}
-
 // Обработчик удаления карточки
-function handleDelete(cardToDelete) {
+function handleCardDelete(cardToDelete) {
   cardToDelete.remove();
 }
+
 // Обработчик лайка карточки
-function handleLike(cardLikeButton) {
+function handleCardLike(cardLikeButton) {
   if (cardLikeButton) {
     cardLikeButton.classList.toggle('card__like-button_is-active');
   }
@@ -68,8 +46,6 @@ function handleLike(cardLikeButton) {
 export { 
   cardsList, 
   renderCard,
-  createCard,
-  createNewCard,
-  handleDelete,
-  handleLike
+  handleCardDelete,
+  handleCardLike
 } 

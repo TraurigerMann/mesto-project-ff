@@ -12,8 +12,8 @@ import {
 } from "./constants.js";
 
 import {  
-  createNewCard,
-} from './card.js';
+  createNewCard
+} from '../index.js';
 
 // Заполнение полей в поп-апе редактирования профиля
 function setInitialEditProfileFormValues() {
@@ -22,11 +22,12 @@ function setInitialEditProfileFormValues() {
 }
 
 // Обработчик изменений в профиле
-function handleFormSubmit(evt) {
+function handleEditProfileFormSubmit(evt) {
   evt.preventDefault();
   
   titleElement.textContent = titleInput.value;
   descriptionElement.textContent = descriptionInput.value;
+
   closePopup(evt.target.closest(".popup_is-opened"));
 }
 
@@ -34,7 +35,7 @@ function handleFormSubmit(evt) {
 function handleNewCardFormSubmit(evt, callbacksObject) {
   evt.preventDefault();
 
-  let newCard = {
+  const newCard = {
     name: newPlaceNameInput.value,
     link: newLinkInput.value
   }
@@ -45,6 +46,6 @@ function handleNewCardFormSubmit(evt, callbacksObject) {
 
 export { 
   setInitialEditProfileFormValues,
-  handleFormSubmit,
+  handleEditProfileFormSubmit,
   handleNewCardFormSubmit
 }

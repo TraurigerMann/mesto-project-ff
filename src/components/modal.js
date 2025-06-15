@@ -19,18 +19,19 @@ function handleOverlayClick(evt) {
 
 // Обработчик закрытия поп-апа
 function handleCloseButtonClick(evt) {
-  const button = evt.target;
-  const popup = button.closest('.popup');
+  const closeButton = evt.target;
+  const popup = closeButton.closest('.popup');
   closePopup(popup);
 }
 
-// Обработчик открытия поп-апа
+// Функция открытия поп-апа
 function openPopup(popup) {
   popup.classList.add('popup_is-animated');
   popup.classList.add('popup_is-opened');
   document.addEventListener("keydown", handleEscClick);
 }
 
+// Функция закрытия поп-апа
 function closePopup(popup) {
   if (popup) {
     popup.classList.add('popup_is-animated');
@@ -39,24 +40,10 @@ function closePopup(popup) {
   }
 }
 
-// Обработчик открытия поп-апа-картинки
-function openImagePopup(
-  cardImg,
-  popupImage,
-  popupImageCaption,
-  buttonTypeCard
-) {
-  popupImage.src = cardImg.src;
-  popupImage.alt = cardImg.alt;
-  popupImageCaption.textContent = cardImg.alt;
-  openPopup(buttonTypeCard);
-}
-
 
 export { 
   handleOverlayClick,
   closePopup, 
   openPopup,
-  openImagePopup,
-    handleCloseButtonClick
+  handleCloseButtonClick
 };
