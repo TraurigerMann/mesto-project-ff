@@ -5,7 +5,6 @@ export const avatarFormElement = document.forms["edit-avatar"];
 export const deleteCardForm = document.forms["delete-card"];
 
 // Кнопки
-export const buttonTypeCard = document.querySelector('.popup_type_image');
 export const profileEditButton = document.querySelector(".profile__edit-button");
 export const profileAddButton = document.querySelector(".profile__add-button");
 
@@ -17,6 +16,7 @@ export const popupImageCaption = document.querySelector(".popup__caption");
 export const popupImage = document.querySelector(".popup__image");
 export const avatarForm = document.querySelector(".popup_type_avatar");
 export const deletePopup = document.querySelector(".popup_type_delete-card");
+export const cardPopup = document.querySelector('.popup_type_image');
 
 // Поля формы
 export const titleInput = document.querySelector('.popup__input_type_name');
@@ -30,3 +30,5 @@ export const descriptionElement = document.querySelector('.profile__description'
 // Элементы полей карточки
 export const newPlaceNameInput = newPlaceFormElement.elements["place-name"];
 export const newLinkInput = newPlaceFormElement.elements.link;
+
+export const cardsList = document.querySelector('.places__list');

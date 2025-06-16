@@ -1,12 +1,3 @@
-const validationConfig = {
-  formSelector: ".popup__form",
-  inputSelector: ".popup__input",
-  submitButtonSelector: ".button",
-  inactiveButtonClass: "button_inactive",
-  inputErrorClass: "form__input_type_error",
-  errorClass: "form__input-error_active",
-};
-
 // Показать ошибку ввода
 const showInputError = (formElement, inputElement, validationConfig) => {
   const errorElement = formElement.querySelector(`.${inputElement.id}-error`);
@@ -90,4 +81,4 @@ function clearValidation(formElement, validationConfig) {
   toggleButtonState(inputList, validationConfig, buttonElementReturn);
 }
 
-export { validationConfig, enableValidation, clearValidation };
+export { enableValidation, clearValidation };

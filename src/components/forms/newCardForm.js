@@ -1,7 +1,6 @@
 import { postCard } from '../api.js';
 
 import { 
-  cardsList, 
   renderCard 
 } from '../card.js';
 
@@ -11,6 +10,7 @@ import {
   newCardForm,
   newPlaceNameInput,
   newLinkInput,
+  cardsList
 } from '../constants.js';
 
 import { handleSubmit } from './forms.js';

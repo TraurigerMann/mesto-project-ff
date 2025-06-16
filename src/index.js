@@ -7,12 +7,10 @@ import {
 
 import { 
   enableValidation, 
-  clearValidation, 
-  validationConfig
+  clearValidation
 } from './components/validation.js';
 
 import {
-  cardsList,
   renderCard,
   handleCardLike
 } from './components/card.js';
@@ -25,14 +23,14 @@ import {
   deleteCardForm,
   profileEditButton,
   profileAddButton,
-  popupImage,
-  popupImageCaption,
-  buttonTypeCard,
   titleInput,
-  descriptionInput,
   titleElement,
   descriptionElement,
-  avatarImage 
+  avatarImage,
+  popupImage,
+  popupImageCaption,
+  cardPopup,
+  cardsList
 } from './components/constants.js';
 
 import {
@@ -57,22 +55,25 @@ import { handleAvatarFormSubmit } from './components/forms/avatarForm.js';
 
 // Конец импортов
 
-
 let userId = '';
+
+const validationConfig = {
+  formSelector: ".popup__form",
+  inputSelector: ".popup__input",
+  submitButtonSelector: ".button",
+  inactiveButtonClass: "button_inactive",
+  inputErrorClass: "form__input_type_error",
+  errorClass: "form__input-error_active",
+};
 
 
 enableValidation(validationConfig);
 
-function openImagePopup(
-  cardImg,
-  popupImage,
-  popupImageCaption,
-  buttonTypeCard
-) {
-  popupImage.src = cardImg.src;
-  popupImage.alt = cardImg.alt;
-  popupImageCaption.textContent = cardImg.alt;
-  openPopup(buttonTypeCard);
+function openImagePopup(cardImage) {
+  popupImage.src = cardImage.src;
+  popupImage.alt = cardImage.alt;
+  popupImageCaption.textContent = cardImage.alt;
+  openPopup(cardPopup);
 }
 
 // Коллбэки ждя обработки событий карточек
@@ -100,15 +101,6 @@ profileAddButton.addEventListener('click', () => {
   clearValidation(newCardForm, validationConfig);
   openPopup(newCardForm);
 });
-
-
-// Слушатель для поп-апа карточки
-// cardsArray.forEach((card) => {
-//   const cardImage = card.querySelector('.card__image');
-//   cardImage.addEventListener('click', () => {
-//     openImagePopup(cardImage, popupImage, popupImageCaption, buttonTypeCard);
-//   });
-// });
 
 // Слушатель для закрытия поп-апа
 popupsArray.forEach((popup) => { 

@@ -1,16 +1,9 @@
-import {
-  popupImage,
-  popupImageCaption,
-  buttonTypeCard,
-} from "../components/constants.js";
-
 import { 
   deleteLikeCard,
   addLikeCard
 } from '../components/api';
 
 const cardTemplate = document.querySelector('#card-template').content;
-const cardsList = document.querySelector('.places__list');
 
 // Отрисовка карточки
 function renderCard(card, callbacksObject, userId) {
@@ -53,7 +46,7 @@ function renderCard(card, callbacksObject, userId) {
   });
 
   cardImage.addEventListener("click", () => {
-    openImageCallback(cardImage, popupImage, popupImageCaption, buttonTypeCard);
+    openImageCallback(cardImage);
   });
 
   return cardElement;
@@ -83,7 +76,6 @@ function handleCardLike(cardLikeCounter, cardLikeButton, card) {
 }
 
 export { 
-  cardsList, 
   renderCard,
   handleCardLike
 } 
